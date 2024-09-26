@@ -1,0 +1,34 @@
+---
+about:
+  template: jolla
+  id: about-block
+  image: "img/my_image.jpg"
+  links:
+    # - icon: twitter
+    #   text: Twitter
+    #   href: https://twitter.com/MarvinSchmittML
+    # - icon: github
+    #   text: Github
+    #   href: https://github.com/marvinschmitt
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/ngadoq/
+    - icon: envelope
+      text: Email
+      href: "mailto:ngadoq@gmail.com"  
+---
+
+::: {#about-block}
+:::
+
+# Welcome to my website!
+
+I am Nga.
+Please feel free to [contact me](mailto:ngadoq@gmail.com) if you have any questions or would like to discuss potential opportunities.
+
+```{=html}
+<div  style="margin: 30px; text-align: center;">
+<a class="btn btn-primary" href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/" role="button" target="_blank" style="padding: 15px 30px;">View the tutorial for this template (+ download link)</a>
+</div>
+```
+
