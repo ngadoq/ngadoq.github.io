@@ -4,14 +4,14 @@
 website:
   title: "Nga Q Do"                                # Your name
   description: "I am a quantiative researcher by training with passion for building the future of work through technology."   # A brief slogan (optional)
-  image: img/my_image.jpg
+  image: img/profile1.jpg
   
   favicon: img/favicon.png
   
   # start of the navigation bar at the top of the website
   navbar:
     pinned: true
-    logo: /img/logo.png
+    logo: /img/icon.png
     
     # your sub-pages
     left:
