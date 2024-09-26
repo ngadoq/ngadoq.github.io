@@ -1,0 +1,28 @@
+---
+title: Projects
+---
+
+## Project 1
+
+<img src="project_1_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('link', 'blank');"/>
+
+<a href="link1" target="_blank">arXiv Preprint</a> | <a href="githublink" target="_blank">Code</a><br>
+
+Project Description
+
+----
+
+## Project 2
+
+<img src="project_2_banner.png" style="height: 100%; width: 100%; object-fit: contain" onclick="window.open('link', 'blank');"/>
+
+<a href="link2" target="_blank">arXiv Preprint</a> | <a href="githublink" target="_blank">Code</a><br>
+
+Project Description
+
+
+```{=html}
+<div  style="margin: 30px; text-align: center;">
+<a class="btn btn-primary" href="https://www.marvinschmitt.com/blog/website-tutorial-quarto/" role="button" target="_blank" style="padding: 15px 30px;">View the tutorial for this template (+ download link)</a>
+</div>
+```
