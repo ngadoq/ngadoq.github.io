@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gamification eLearning — Nga Do</title>
+  <title>Gamification & Learner Engagement</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
@@ -143,7 +143,7 @@
       overflow: hidden;
     }
     .project-figure img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       display: block;
       transition: transform 0.4s ease;
@@ -203,7 +203,7 @@
       line-height: 1.65;
     }
     .content-section ul li::before {
-      content: '•';
+      content: '—';
       position: absolute;
       left: 0;
       color: var(--warm);
@@ -313,26 +313,26 @@
   </nav>
 
   <!-- ═══════════════════════════════════════════════
-       PROJECT HEADER — edit title, type, summary, meta
+       PROJECT HEADER 
   ════════════════════════════════════════════════════ -->
   <div class="project-header">
-    <p class="project-type">Experimental Study · E-Learning Platform</p>
-    <h1 class="project-title">Gamification & Learner Engagement Patterns</h1>
+    <p class="project-type">Experimental Study · University of Minnesota</p>
+    <h1 class="project-title">Gamification & Learner Engagement in E-Learning</h1>
     <p class="project-summary">
-      Designed a longitudinal experiment to understand how specific gamification mechanics influence learner engagement and retention over time.
+      Designed a longitudinal experiment to understand how gamification shapes learner behavior - collected and analyzed behavioral log data via platform API to map engagement trajectories and identify where learners drop off or thrive.
     </p>
     <div class="meta-row">
       <div class="meta-item">
-        <span class="meta-label">Timeline</span>
-        <span class="meta-value">2022 — Present</span>
+        <span class="meta-label">Organization</span>
+        <span class="meta-value">University of Minnesota</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Role</span>
-        <span class="meta-value">Lead Researcher & Designer</span>
+        <span class="meta-value">Graduate Researcher</span>
       </div>
       <div class="meta-item">
-        <span class="meta-label">Status</span>
-        <span class="meta-value">Scaling to U.S. Naval Academy</span>
+        <span class="meta-label">Design</span>
+        <span class="meta-value">Longitudinal Experiment</span>
       </div>
     </div>
   </div>
@@ -340,126 +340,56 @@
   <div class="project-body">
     <main class="project-content">
 
-      <!-- ═══════════════════════════════════════════
-           ADD YOUR IMAGES HERE
-           Replace src="images/your-image.jpg" with your actual image paths.
-           Images go in a folder: research/images/
-           Example filenames: coaching-agent-diagram.png, user-study-results.jpg
-      ════════════════════════════════════════════════ -->
-
-      <!-- SINGLE IMAGE EXAMPLE -->
+      <!-- To add an image, uncomment the block below and update src and alt:
       <figure class="project-figure">
-        <img src="images/gamification-elearning.svg" alt="Gamification experiment overview" />
-        <figcaption>System architecture overview — LLM coaching pipeline</figcaption>
+        <img src="images/gamification-study.jpg" alt="Description" />
+        <figcaption>Your caption here</figcaption>
       </figure>
-
-      <!-- TWO-IMAGE GRID EXAMPLE (delete if not needed) -->
-      <!--
-      <div class="figure-grid">
-        <figure class="project-figure">
-          <img src="images/user-study-setup.jpg" alt="User study setup" />
-          <figcaption>User study session setup</figcaption>
-        </figure>
-        <figure class="project-figure">
-          <img src="images/results-chart.png" alt="Engagement results" />
-          <figcaption>Pre/post engagement scores</figcaption>
-        </figure>
-      </div>
       -->
-
-      <!-- ═══════════════════════════════════════════
-           CONTENT SECTIONS — edit freely
-      ════════════════════════════════════════════════ -->
 
       <div class="content-section">
         <h2>Overview</h2>
         <p>
-          Leadership development at scale is hard. Traditional coaching is expensive, inconsistent, and hard to evaluate. This project asks: can an LLM-powered agent deliver psychologically grounded, personalized coaching that actually works?
+          Gamification - adding game-like elements such as points, badges, and leaderboards to non-game contexts - is widely used in e-learning platforms, but its actual effect on sustained learner engagement is poorly understood. Does it genuinely motivate learning, or just create short-lived novelty?
         </p>
         <p>
-          I designed, built, and evaluated a coaching agent that adapts its interventions to individual leaders based on their goals, context, and growth trajectories — combining behavioral science principles with modern LLM capabilities.
+          This project used a longitudinal experimental design to investigate how gamification features influence learner behavior over time, moving beyond self-report to analyze real behavioral trace data collected directly from the platform.
         </p>
       </div>
 
-      <div class="content-section">
-        <h2>The Problem</h2>
-        <p>
-          Most AI coaching tools treat language models as chatbots — they respond, but don't intervene with intention. Without grounding in psychological theory, these tools risk being entertaining but ineffective.
-        </p>
-        <div class="callout">
-          How do we design an AI agent that doesn't just sound like a coach, but actually facilitates the kind of reflection and behavior change that drives leadership growth?
-        </div>
-      </div>
-
-      <!-- ADD AN IMAGE HERE BETWEEN SECTIONS -->
-      <figure class="project-figure">
-        <img src="images/gamification-elearning.svg" alt="Learner engagement dashboard" />
-        <figcaption>Prototype interface — leader interaction flow</figcaption>
-      </figure>
 
       <div class="content-section">
         <h2>Approach</h2>
         <ul>
-          <li>Grounded the agent's intervention logic in established leadership development theory (goal-setting, self-determination theory, reflective practice).</li>
-          <li>Built the agent using LangChain and OpenAI API, with a memory system to track progress across sessions.</li>
-          <li>Ran qualitative user interviews with 20+ participants to evaluate perceived usefulness, trust, and usability.</li>
-          <li>Designed a controlled experiment to measure pre/post leadership self-efficacy and behavioral intent.</li>
+          <li>Designed a longitudinal experiment to track how learner behavior evolved over time in response to gamification features, controlling for prior engagement and course type.</li>
+          <li>Collected behavioral log data through the e-learning platform's API - capturing interactions at scale.</li>
+          <li>Analyzed engagement trajectories to identify patterns: who sustained engagement, who dropped off, and what platform behaviors predicted each outcome.</li>
+          <li>Applied statistical modeling to isolate the effect of gamification elements from confounding learner characteristics.</li>
         </ul>
       </div>
 
-      <div class="content-section">
-        <h2>Key Findings</h2>
-        <p>
-          Participants reported high perceived usefulness and trust in the agent's feedback, particularly when the agent asked reflective questions rather than offering direct advice. The agent's ability to remember context across sessions was rated as the most valuable feature.
-        </p>
-        <p>
-          Quantitative results showed significant improvement in leadership self-efficacy scores post-intervention, with effect sizes comparable to traditional coaching programs at a fraction of the cost.
-        </p>
-      </div>
-
-      <div class="content-section">
-        <h2>Impact</h2>
-        <p>
-          The agent is currently being scaled for deployment at the U.S. Naval Academy, where it will support leadership development for incoming officers. This transition from prototype to real-world deployment required significant work on reliability, safety guardrails, and evaluation frameworks.
-        </p>
-      </div>
 
     </main>
 
-    <!-- SIDEBAR -->
     <aside class="project-sidebar">
       <div class="sidebar-section">
         <p class="sidebar-label">Methods</p>
         <div class="method-list">
-          <span class="method-chip">LangChain</span>
-          <span class="method-chip">OpenAI API</span>
-          <span class="method-chip">Experimental Design</span>
-          <span class="method-chip">Qualitative Interviews</span>
-          <span class="method-chip">HCI Evaluation</span>
+          <span class="method-chip">Longitudinal Design</span>
+          <span class="method-chip">API</span>
+          <span class="method-chip">Behavioral Analysis</span>
           <span class="method-chip">Python</span>
-          <span class="method-chip">PostgreSQL</span>
+          <span class="method-chip">Log Data</span>
+          <span class="method-chip">Statistical Modeling</span>
         </div>
       </div>
 
       <div class="sidebar-section">
-        <p class="sidebar-label">Collaborators</p>
-        <p class="sidebar-text">University of Minnesota · U.S. Naval Academy</p>
+        <p class="sidebar-label">Organization</p>
+        <p class="sidebar-text">University of Minnesota</p>
       </div>
 
-      <div class="sidebar-section">
-        <p class="sidebar-label">Links</p>
-        <!-- Uncomment and fill in as needed -->
-        <!--
-        <a class="sidebar-link" href="https://github.com/yourusername/coaching-agent" target="_blank">↗ GitHub Repo</a>
-        <a class="sidebar-link" href="your-paper.pdf" target="_blank">↗ Working Paper</a>
-        -->
-        <p class="sidebar-text" style="font-style: italic;">Paper in preparation</p>
-      </div>
 
-      <div class="sidebar-section">
-        <p class="sidebar-label">Related Projects</p>
-        <a class="sidebar-link" href="llm-communication-pipelines.html">LLM Communication Pipelines →</a>
-      </div>
     </aside>
   </div>
 
