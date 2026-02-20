@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">AI Coaching Agent</title>
+  <desc id="desc">Placeholder cover image for AI Coaching Agent for Leadership Development.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f0e0c" />
+      <stop offset="100%" stop-color="#c9473a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="48" y="48" width="1104" height="579" fill="none" stroke="#f5f2ec" stroke-opacity="0.5" stroke-width="2" />
+  <text x="88" y="150" fill="#c8a96e" font-family="'DM Mono', monospace" font-size="24" letter-spacing="4">FEATURED RESEARCH</text>
+  <text x="88" y="250" fill="#f5f2ec" font-family="'Instrument Sans', sans-serif" font-size="64" font-weight="600">AI Coaching Agent</text>
+  <text x="88" y="320" fill="#f5f2ec" font-family="'Instrument Sans', sans-serif" font-size="42" font-weight="400">for Leadership Development</text>
+  <text x="88" y="560" fill="#f5f2ec" fill-opacity="0.85" font-family="'DM Mono', monospace" font-size="22" letter-spacing="3">REPLACE WITH YOUR PROJECT IMAGE</text>
+</svg>

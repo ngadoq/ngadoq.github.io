@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Gamification and Learner Engagement</title>
+  <desc id="desc">Placeholder cover image for Gamification and Learner Engagement Patterns.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#c8a96e" />
+      <stop offset="100%" stop-color="#7a7168" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="48" y="48" width="1104" height="579" fill="none" stroke="#0f0e0c" stroke-opacity="0.35" stroke-width="2" />
+  <text x="88" y="150" fill="#0f0e0c" font-family="'DM Mono', monospace" font-size="24" letter-spacing="4">FEATURED RESEARCH</text>
+  <text x="88" y="250" fill="#0f0e0c" font-family="'Instrument Sans', sans-serif" font-size="60" font-weight="600">Gamification &amp;</text>
+  <text x="88" y="320" fill="#0f0e0c" font-family="'Instrument Sans', sans-serif" font-size="60" font-weight="600">Learner Engagement Patterns</text>
+  <text x="88" y="560" fill="#0f0e0c" fill-opacity="0.8" font-family="'DM Mono', monospace" font-size="22" letter-spacing="3">REPLACE WITH YOUR PROJECT IMAGE</text>
+</svg>

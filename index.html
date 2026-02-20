@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nga Do — Human-Centered AI Researcher</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #0f0e0c;
+      --paper: #f5f2ec;
+      --warm: #c8a96e;
+      --accent: #c9473a;
+      --muted: #7a7168;
+      --light-rule: #ddd8cc;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.5;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 4rem;
+      backdrop-filter: blur(12px);
+      background: rgba(245, 242, 236, 0.85);
+      border-bottom: 1px solid var(--light-rule);
+    }
+    .nav-name {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    #hero {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem 4rem 4rem;
+  position: relative;
+}
+    .hero-left {
+  padding-right: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+
+    .hero-left {
+  max-width: 640px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s ease forwards 0.2s;
+}
+
+    .eyebrow {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 40ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.75rem;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid currentColor;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+    .btn-primary:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+    }
+    .btn-ghost:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .hero-right {
+      padding-left: 4rem;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.8s ease forwards 0.45s;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      border: 1px solid var(--light-rule);
+    }
+    .stat-cell {
+      padding: 1.75rem;
+      border: 1px solid var(--light-rule);
+    }
+    .stat-cell:nth-child(1) { background: var(--ink); color: var(--paper); }
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.5rem;
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .stat-cell:nth-child(1) .stat-num { color: var(--warm); }
+    .stat-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.65;
+    }
+
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.85rem;
+      border: 1px solid var(--light-rule);
+      color: var(--muted);
+      border-radius: 2px;
+    }
+    .tag.accent { border-color: var(--accent); color: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 4rem;
+      border-top: 1px solid var(--light-rule);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+    }
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      letter-spacing: -0.02em;
+    }
+
+    /* ── RESEARCH CARDS ── */
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--light-rule);
+      border: 1px solid var(--light-rule);
+    }
+    .research-card {
+      background: var(--paper);
+      padding: 0;
+      transition: background 0.25s;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      cursor: pointer;
+    }
+    .card-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-bottom: 1px solid var(--light-rule);
+      overflow: hidden;
+      background: #eee9de;
+    }
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .research-card:hover .card-image img {
+      transform: scale(1.03);
+    }
+    .card-content {
+      padding: 2.5rem;
+      position: relative;
+    }
+    .research-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    .research-card:hover::after { width: 100%; }
+    .research-card:hover { background: #eee9de; }
+    .card-arrow {
+      position: absolute;
+      top: 2rem; right: 2rem;
+      font-size: 1rem;
+      color: var(--light-rule);
+      transition: color 0.2s, transform 0.2s;
+    }
+    .research-card:hover .card-arrow {
+      color: var(--accent);
+      transform: translate(3px, -3px);
+    }
+
+    .card-type {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.62rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .card-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.35rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .card-methods {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .method-chip {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      padding: 0.2rem 0.6rem;
+      background: var(--ink);
+      color: var(--paper);
+      border-radius: 1px;
+    }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0 3rem;
+    }
+    .tl-entry {
+      display: contents;
+    }
+    .tl-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      padding-top: 0.2rem;
+      text-align: right;
+      padding-bottom: 3rem;
+    }
+    .tl-body {
+      border-left: 1px solid var(--light-rule);
+      padding-left: 2.5rem;
+      padding-bottom: 3rem;
+      position: relative;
+    }
+    .tl-body::before {
+      content: '';
+      position: absolute;
+      left: -5px; top: 0.55rem;
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--paper);
+      border: 1px solid var(--accent);
+    }
+    .tl-role {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.25rem;
+    }
+    .tl-org {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .tl-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .tl-bullets li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      padding-left: 1.2rem;
+      position: relative;
+      line-height: 1.6;
+    }
+    .tl-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--warm);
+      font-family: 'DM Serif Display', serif;
+    }
+
+    /* ── SKILLS ── */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light-rule);
+      border: 1px solid var(--light-rule);
+    }
+    .skill-group {
+      background: var(--paper);
+      padding: 2.5rem;
+    }
+    .skill-group-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .skill-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .skill-list li {
+      font-size: 0.88rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .skill-list li::before {
+      content: '';
+      width: 4px; height: 4px;
+      background: var(--warm);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .contact-headline {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+    .contact-headline em { font-style: italic; color: var(--muted); }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      text-decoration: none;
+      color: var(--ink);
+      padding: 1.25rem;
+      border: 1px solid var(--light-rule);
+      transition: all 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .contact-link-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.15rem;
+    }
+    .contact-link-val {
+      font-size: 0.9rem;
+    }
+    .contact-icon {
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--light-rule);
+      padding: 2rem 4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-note {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 2rem; }
+      #hero { grid-template-columns: 1fr; padding: 7rem 2rem 4rem; gap: 3rem; }
+      .hero-rule { display: none; }
+      .hero-left, .hero-right { padding: 0; }
+      section { padding: 4rem 2rem; }
+      .timeline { grid-template-columns: 1fr; gap: 0; }
+      .tl-date { text-align: left; padding-bottom: 0.5rem; }
+      .skills-layout { grid-template-columns: 1fr; }
+      #contact { grid-template-columns: 1fr; gap: 3rem; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <span class="nav-name">Nga Do, Ph.D. Candidate</span>
+    <ul class="nav-links">
+      <li><a href="#research">Research</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" style="border: none;">
+    <div class="hero-left">
+      <p class="eyebrow">Human-Centered AI Researcher</p>
+      <h1>Nga Do<br></h1>
+      <p class="hero-desc">
+        I design, build, and evaluate AI systems that work <em>with</em> people — grounding LLMs and intelligent tools in the psychology of how humans actually think, learn, and lead.
+      </p>
+      <div class="cta-row">
+        <a href="#research" class="btn btn-primary">View Research ↓</a>
+        <a href="NgaDo_Resume.pdf" class="btn btn-ghost" target="_blank">Download CV</a>
+      </div>
+    </div>
+    
+      <div class="domain-tags">
+        <span class="tag">Human-AI Interaction</span>
+        <span class="tag">LLM Applications</span>
+        <span class="tag">Psychometrics</span>
+        <span class="tag">User Research</span>
+        <span class="tag">Leadership</span>
+        <span class="tag">NLP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <div class="section-header reveal">
+      <span class="section-num">01 —</span>
+      <h2>Featured Research</h2>
+    </div>
+    <div class="research-grid">
+      <a class="research-card reveal" href="research/ai-coaching-agent.html">
+
+        <div class="card-content">
+          <span class="card-arrow">↗</span>
+          <p class="card-type">Dissertation Project · In Progress</p>
+          <h3 class="card-title">AI Coaching Agent for Leadership Development</h3>
+          <p class="card-desc">Designed and prototyped an LLM-powered coaching agent that delivers personalized leadership interventions. Evaluated usability and effectiveness through qualitative interviews and controlled experiments. Currently being scaled for deployment at the U.S. Naval Academy.</p>
+          <div class="card-methods">
+            <span class="method-chip">LangChain</span>
+            <span class="method-chip">OpenAI API</span>
+            <span class="method-chip">Experimental Design</span>
+            <span class="method-chip">Qualitative Interviews</span>
+            <span class="method-chip">HCI Evaluation</span>
+          </div>
+        </div>
+      </a>
+      <a class="research-card reveal" href="research/gamification-elearning.html">
+
+        <div class="card-content">
+          <span class="card-arrow">↗</span>
+          <p class="card-type">Experimental Study · E-Learning Platform</p>
+          <h3 class="card-title">Gamification & Learner Engagement Patterns</h3>
+          <p class="card-desc">Designed a longitudinal experiment to uncover how gamification elements influence learner behavior. Collected and analyzed behavioral log data via platform API to map engagement trajectories and identify intervention points.</p>
+          <div class="card-methods">
+            <span class="method-chip">Longitudinal Design</span>
+            <span class="method-chip">API Data Collection</span>
+            <span class="method-chip">Behavioral Analysis</span>
+            <span class="method-chip">Python</span>
+          </div>
+        </div>
+      </a>
+      <a class="research-card reveal" href="research/hirevue-assessment.html">
+
+        <div class="card-content">
+          <span class="card-arrow">↗</span>
+          <p class="card-type">Consulting · HireVue</p>
+          <h3 class="card-title">Human-Centered Assessment Design for Game-Based Tools</h3>
+          <p class="card-desc">Applied human-centered design principles to create a training module improving candidate experience and validity of game-based assessments. Evaluated effectiveness through experimental methods and delivered evidence-based product recommendations.</p>
+          <div class="card-methods">
+            <span class="method-chip">Human-Centered Design</span>
+            <span class="method-chip">Psychometrics</span>
+            <span class="method-chip">Experimental Evaluation</span>
+            <span class="method-chip">Stakeholder Communication</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header reveal">
+      <span class="section-num">02 —</span>
+      <h2>Experience</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-entry">
+        <div class="tl-date">2025 — Present</div>
+        <div class="tl-body">
+          <div class="tl-role">I-O Psychology / Data Science Intern</div>
+          <div class="tl-org">State Farm</div>
+          <ul class="tl-bullets">
+            <li>Built ML models to identify predictors of business outcomes; applied interpretable methods to surface actionable insights for HR partners.</li>
+            <li>Investigated AI tool adoption barriers through focus groups, informing strategies for human-AI workflow integration.</li>
+            <li>Partnered with HR executives on team effectiveness research, delivering recommendations for leadership development programs.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-date">2021 — Present</div>
+        <div class="tl-body">
+          <div class="tl-role">Graduate Researcher</div>
+          <div class="tl-org">University of Minnesota</div>
+          <ul class="tl-bullets">
+            <li>Designed and prototyped an LLM-based coaching agent; running user studies to evaluate effectiveness, now scaling to the U.S. Naval Academy.</li>
+            <li>Built LLM pipelines to automate qualitative team communication analysis at scale.</li>
+            <li>Ran longitudinal gamification experiment analyzing behavioral log data from an e-learning platform.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-date">2021 — 2023</div>
+        <div class="tl-body">
+          <div class="tl-role">External Consultant</div>
+          <div class="tl-org">HireVue</div>
+          <ul class="tl-bullets">
+            <li>Applied human-centered design to improve game-based assessment candidate experience and validity.</li>
+            <li>Evaluated training module effectiveness through experimental design; presented evidence-based product recommendations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-date">2023</div>
+        <div class="tl-body">
+          <div class="tl-role">User Experience Researcher</div>
+          <div class="tl-org">Hack for LA</div>
+          <ul class="tl-bullets">
+            <li>Conducted user interviews to identify volunteer onboarding friction points and recommend workflow improvements.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="tl-entry">
+        <div class="tl-date">2020 — 2021</div>
+        <div class="tl-body">
+          <div class="tl-role">Researcher</div>
+          <div class="tl-org">Central Michigan University College of Medicine</div>
+          <ul class="tl-bullets">
+            <li>Led mixed-methods research on learning team effectiveness; findings shaped program design for student experience.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header reveal">
+      <span class="section-num">03 —</span>
+      <h2>Expertise</h2>
+    </div>
+    <div class="skills-layout reveal">
+      <div class="skill-group">
+        <p class="skill-group-title">Research Methods</p>
+        <ul class="skill-list">
+          <li>Experimental & Quasi-experimental Design</li>
+          <li>Qualitative Interviews & Focus Groups</li>
+          <li>Survey Design & Psychometric Validation</li>
+          <li>IRT, SEM, EFA/CFA, Multilevel Modeling</li>
+          <li>Longitudinal Studies</li>
+          <li>Usability Testing & UX Research</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">AI / Engineering</p>
+        <ul class="skill-list">
+          <li>LLM Application Development (LangChain)</li>
+          <li>HuggingFace Transformers & Embeddings</li>
+          <li>Python · R · SQL</li>
+          <li>AWS SageMaker · Streamlit</li>
+          <li>ML Modeling & Interpretability</li>
+          <li>NLP Pipeline Design</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <p class="skill-group-title">Design & Communication</p>
+        <ul class="skill-list">
+          <li>Human-Centered Design</li>
+          <li>Tableau · Power BI · R Shiny</li>
+          <li>Stakeholder Communication</li>
+          <li>Adobe Creative Suite</li>
+          <li>Technical Writing & Research Translation</li>
+          <li>Workshop Facilitation</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="display: grid;">
+    <div class="reveal">
+      <p class="eyebrow">Let's Connect</p>
+      <h2 class="contact-headline">Interested in<br><em>working together?</em></h2>
+    </div>
+    <div class="contact-links reveal">
+      <a class="contact-link" href="/cdn-cgi/l/email-protection#b9c0d6cccb97dcd4d8d0d5f9ccd4d797dcddcc">
+        <span class="contact-icon">✉</span>
+        <div>
+          <div class="contact-link-label">Email</div>
+          <div class="contact-link-val"><span class="__cf_email__" data-cfemail="f38a9c8681dd969e929a9fb3869e9ddd969786">[email&#160;protected]</span></div>
+        </div>
+      </a>
+      <a class="contact-link" href="https://linkedin.com/in/yourprofile" target="_blank">
+        <span class="contact-icon">in</span>
+        <div>
+          <div class="contact-link-label">LinkedIn</div>
+          <div class="contact-link-val">linkedin.com/in/yourprofile</div>
+        </div>
+      </a>
+      <a class="contact-link" href="https://github.com/yourusername" target="_blank">
+        <span class="contact-icon">⌥</span>
+        <div>
+          <div class="contact-link-label">GitHub</div>
+          <div class="contact-link-val">github.com/yourusername</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-note">Nga Do — I-O Psychology × Human-Centered AI</span>
+    <span class="footer-note">University of Minnesota, Ph.D. Candidate · 2026</span>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

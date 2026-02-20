@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Human-Centered Assessment Design</title>
+  <desc id="desc">Placeholder cover image for Human-Centered Assessment Design for Game-Based Tools.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5f2ec" />
+      <stop offset="100%" stop-color="#ddd8cc" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)" />
+  <rect x="48" y="48" width="1104" height="579" fill="none" stroke="#c9473a" stroke-opacity="0.7" stroke-width="2" />
+  <text x="88" y="150" fill="#c9473a" font-family="'DM Mono', monospace" font-size="24" letter-spacing="4">FEATURED RESEARCH</text>
+  <text x="88" y="245" fill="#0f0e0c" font-family="'Instrument Sans', sans-serif" font-size="56" font-weight="600">Human-Centered Assessment</text>
+  <text x="88" y="312" fill="#0f0e0c" font-family="'Instrument Sans', sans-serif" font-size="56" font-weight="600">Design for Game-Based Tools</text>
+  <text x="88" y="560" fill="#7a7168" font-family="'DM Mono', monospace" font-size="22" letter-spacing="3">REPLACE WITH YOUR PROJECT IMAGE</text>
+</svg>
