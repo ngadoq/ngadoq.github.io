@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Coaching Agent</title>
+  <title>VR Leadership Simulation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
   <style>
@@ -69,7 +69,7 @@
       color: var(--muted);
     }
 
-    /* HERO HEADER */
+    /* HEADER */
     .project-header {
       padding: 8rem 4rem 4rem;
       border-bottom: 1px solid var(--light-rule);
@@ -119,7 +119,7 @@
       font-weight: 500;
     }
 
-    /* MAIN LAYOUT */
+    /* LAYOUT */
     .project-body {
       display: grid;
       grid-template-columns: 1fr 280px;
@@ -128,22 +128,19 @@
       margin: 0 auto;
       padding: 0 4rem;
     }
-
-    /* CONTENT */
     .project-content {
       padding: 4rem 4rem 6rem 0;
       border-right: 1px solid var(--light-rule);
     }
 
-    /* ── IMAGE BLOCKS ── */
-    /* To add an image, use: <figure class="project-figure"> */
+    /* IMAGES */
     .project-figure {
       margin: 2.5rem 0;
       border: 1px solid var(--light-rule);
       overflow: hidden;
     }
     .project-figure img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       display: block;
       transition: transform 0.4s ease;
@@ -158,8 +155,6 @@
       border-top: 1px solid var(--light-rule);
       background: #eee9de;
     }
-
-    /* Two-column image grid */
     .figure-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -168,12 +163,9 @@
       border: 1px solid var(--light-rule);
       margin: 2.5rem 0;
     }
-    .figure-grid .project-figure {
-      margin: 0;
-      border: none;
-    }
+    .figure-grid .project-figure { margin: 0; border: none; }
 
-    /* Section headings */
+    /* CONTENT */
     .content-section { margin-bottom: 3rem; }
     .content-section h2 {
       font-family: 'DM Serif Display', serif;
@@ -209,8 +201,6 @@
       color: var(--warm);
       font-family: 'DM Serif Display', serif;
     }
-
-    /* Callout / highlight box */
     .callout {
       border-left: 3px solid var(--accent);
       padding: 1rem 1.5rem;
@@ -228,9 +218,7 @@
       top: 5rem;
       align-self: start;
     }
-    .sidebar-section {
-      margin-bottom: 2.5rem;
-    }
+    .sidebar-section { margin-bottom: 2.5rem; }
     .sidebar-label {
       font-family: 'DM Mono', monospace;
       font-size: 0.62rem;
@@ -239,11 +227,7 @@
       color: var(--accent);
       margin-bottom: 0.75rem;
     }
-    .method-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
+    .method-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .method-chip {
       font-family: 'DM Mono', monospace;
       font-size: 0.6rem;
@@ -253,11 +237,7 @@
       color: var(--paper);
       border-radius: 1px;
     }
-    .sidebar-text {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
+    .sidebar-text { font-size: 0.85rem; color: var(--muted); line-height: 1.65; }
     .sidebar-link {
       display: inline-flex;
       align-items: center;
@@ -274,11 +254,7 @@
       width: 100%;
       justify-content: center;
     }
-    .sidebar-link:hover {
-      background: var(--ink);
-      color: var(--paper);
-      border-color: var(--ink);
-    }
+    .sidebar-link:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 
     footer {
       border-top: 1px solid var(--light-rule);
@@ -312,27 +288,28 @@
     <span class="nav-name">Nga Do</span>
   </nav>
 
-  <!-- ═══════════════════════════════════════════════
-       PROJECT HEADER — edit title, type, summary, meta
-  ════════════════════════════════════════════════════ -->
   <div class="project-header">
-    <p class="project-type">Research Project · In Progress · University of Minnesota</p>
-    <h1 class="project-title">AI Coaching Agent for Leadership Development</h1>
+    <p class="project-type">Experimental Research · University of Minnesota</p>
+    <h1 class="project-title">Can VR Create a Valid Leadership Assessment?</h1>
     <p class="project-summary">
-      Designed an LLM-powered coaching agent that delivers personalized leadership interventions - grounding AI capability in psychological theory of goal-setting and coaching.
+      Designed and ran an experiment to test whether immersive virtual reality - built in Unreal Engine with motion capture - can serve as a psychometrically valid platform for assessing leadership behavior in ways traditional methods cannot.
     </p>
     <div class="meta-row">
       <div class="meta-item">
-        <span class="meta-label">Timeline</span>
-        <span class="meta-value">2025 - Present</span>
+        <span class="meta-label">Organization</span>
+        <span class="meta-value">University of Minnesota</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Role</span>
-        <span class="meta-value">Lead Researcher & Designer</span>
+        <span class="meta-value">Lead Researcher</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Status</span>
-        <span class="meta-value">In Progress</span>
+        <span class="meta-value">Testing Phase</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Technology</span>
+        <span class="meta-value">Unreal Engine · Motion Capture</span>
       </div>
     </div>
   </div>
@@ -340,101 +317,86 @@
   <div class="project-body">
     <main class="project-content">
 
-      <!-- ═══════════════════════════════════════════
-           ADD YOUR IMAGES HERE
-           Replace src="images/your-image.jpg" with your actual image paths.
-           Images go in a folder: research/images/
-           Example filenames: coaching-agent-diagram.png, user-study-results.jpg
-      ════════════════════════════════════════════════ -->
-
-      <!-- SINGLE IMAGE EXAMPLE -->
  
-      <!-- TWO-IMAGE GRID EXAMPLE (delete if not needed) -->
-      <!--
-      <div class="figure-grid">
-        <figure class="project-figure">
-          <img src="images/user-study-setup.jpg" alt="User study setup" />
-          <figcaption>User study session setup</figcaption>
-        </figure>
-        <figure class="project-figure">
-          <img src="images/results-chart.png" alt="Engagement results" />
-          <figcaption>Pre/post engagement scores</figcaption>
-        </figure>
-      </div>
-      -->
+      <figure class="project-figure">
+        <img src="images/vr-environment.png" alt="VR environment built in Unreal Engine" />
+        <figcaption>Virtual environment - built in Unreal Engine</figcaption>
+      </figure>
 
-      <!-- ═══════════════════════════════════════════
-           CONTENT SECTIONS — edit freely
-      ════════════════════════════════════════════════ -->
+      </div>
+
 
       <div class="content-section">
-        <h2>The Problem</h2>
+        <h2>Overview</h2>
         <p>
-          Leadership development at scale is hard. Traditional coaching is expensive, inconsistent, and hard to evaluate. This project asks: can an LLM-powered agent deliver psychologically grounded, personalized coaching that actually works?
+          Leadership assessment has a longstanding methodology problem. Traditional tools - behavioral interviews, tests often struggle to capture how leaders actually behave under pressure, in dynamic situations, with real stakes. Self-report measures tell you what leaders think they do. Observation studies are expensive, inconsistent, and hard to standardize.
         </p>
         <p>
-          I designed and evaluated a coaching agent that adapts its interventions to individual leaders based on their goals, context, and growth trajectories — combining behavioral science principles with modern LLM capabilities.
+          This project investigates whether virtual reality can close that gap. By placing participants in immersive, standardized leadership scenarios, VR offers something rare in assessment: experimental control over the situation combined with ecological validity in how people respond to it.
         </p>
       </div>
 
-           <!-- ADD AN IMAGE HERE BETWEEN SECTIONS -->
-      <figure class="project-figure">
-        <img src="images/ai-coaching-agent.png" alt="Coaching agent interface screenshot" />
-        <figcaption>Prototype interface - interaction flow</figcaption>
-      </figure>
-
       <div class="content-section">
-        <h2>Approach</h2>
-        <ul>
-          <li>Grounded the agent's intervention logic in established leadership development theory (goal-setting, self-determination theory, reflective questioning).</li>
-          <li>Built the agent using OpenAI API, with a memory system to track progress across sessions.</li>
-        </ul>
+        <h2>The Research Question</h2>
+  
       </div>
 
-      <!-- PROTOTYPE IMAGE -->
-      <figure class="project-figure">
-        <img src="images/ai-coaching-agent-prototype.png" alt="AI Coaching Agent prototype interface" />
-        <figcaption>Prototype interface showing personalized coaching conversation</figcaption>
-      </figure>
-
       <div class="content-section">
-        <h2>Evaluation</h2>
-        <ul>
-          <li>Ran qualitative user interviews with 20+ participants to evaluate perceived usefulness, trust, and usability.</li>
-          <li>Designed a controlled experiment to measure longitudinal behavioral outcomes change.</li>
-        </ul>
+        <h2>Building the Environment</h2>
       </div>
 
 
       <div class="content-section">
-        <h2>Impact</h2>
+        <ul>
+          <li>Collaborated with engineers to design and construct the VR environment in Unreal Engine, making research-driven decisions about scenario structure, level of realism, and situational demands to ensure the context was appropriate for eliciting leadership behavior.</li>
+          <li>Integrated motion capture to record participant movement and nonverbal behavior within the virtual environment, creating embodied avatars that allowed participants to inhabit the scenario rather than simply observe it.</li>
+          <li>Designed the assessment scenarios to present standardized leadership challenges - ensuring all participants faced equivalent situational demands, a key requirement for valid measurement.</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Experimental Design</h2>
+      
+        <ul>
+          <li>Designed the experimental protocol to evaluate validity - whether scores from the VR assessment reflect the leadership dimensions they are intended to measure, not just general performance or technical comfort with VR.</li>
+          <li>Collected convergent measures - established leadership assessments and self-report instruments - to test whether VR-derived scores correlate with existing valid measures in expected ways.</li>
+        </ul>
+      </div>
+
+      <div class="content-section">
+        <h2>Why This Matters</h2>
         <p>
-          The agent is currently being scaled for deployment at the U.S. Naval Academy, where it will support leadership development for incoming officers. This transition from prototype to real-world deployment required significant work on reliability, safety guardrails, and evaluation frameworks.
+          If VR assessments can be shown to be psychometrically valid, they open up possibilities that current leadership assessment tools cannot offer: standardized, replicable, high-fidelity situations that are impossible or unethical to create in real life, at a cost far below traditional assessment centers.
+        </p>
+        <p>
+          This work sits at the boundary of measurement science, immersive technology, and leadership theory — and contributes to a growing conversation about how emerging technologies can be responsibly integrated into talent assessment without sacrificing scientific rigor.
         </p>
       </div>
 
     </main>
 
-    <!-- SIDEBAR -->
     <aside class="project-sidebar">
       <div class="sidebar-section">
         <p class="sidebar-label">Methods</p>
         <div class="method-list">
-              <span class="method-chip">API</span>
+          <span class="method-chip">Unreal Engine</span>
+          <span class="method-chip">Motion Capture</span>
           <span class="method-chip">Experimental Design</span>
-          <span class="method-chip">Interviews & Focus Groups</span>
-          <span class="method-chip">Python</span>
-          <span class="method-chip">PostgreSQL</span>
+          <span class="method-chip">Psychometric Validation</span>
+          <span class="method-chip">Construct Validity</span>
+          <span class="method-chip">Behavioral Coding</span>
+          <span class="method-chip">VR Development</span>
         </div>
       </div>
 
       <div class="sidebar-section">
-        <p class="sidebar-label">Collaborators</p>
-        <p class="sidebar-text">University of Minnesota · U.S. Naval Academy · Office of Naval Research</p>
+        <p class="sidebar-label">Organization</p>
+        <p class="sidebar-text">University of Minnesota</p>
       </div>
 
       <div class="sidebar-section">
-
+        <p class="sidebar-label">Collaborators</p>
+        <p class="sidebar-text">Illusioneering Lab · University of Minnesota research team</p>
       </div>
 
     </aside>
